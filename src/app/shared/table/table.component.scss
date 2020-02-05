@@ -5,14 +5,18 @@
 .div{
   font-family:'cursive';
 }
+#c2 {
+  // background:green;
+  float: right;
+}
 table{
   border: 1px;
-  border-block-end-color: aqua
+  border-block-end-color: aqua;
 }
 thead th {
     cursor: pointer;
     width: 50%;
-    border:2px solid #456879; 
+    // border:0.1px solid #456879; 
     background: rgb(2, 87, 80);
     span {
       visibility: hidden;

@@ -43,7 +43,7 @@ export class AddEditModelComponent implements OnInit {
     ]),
     department: ['', Validators.required],
     hiredate: ['', Validators.required],
-    permanent: [false, Validators.requiredTrue]
+    permanent: [false]
   });
 
   ngOnInit() {

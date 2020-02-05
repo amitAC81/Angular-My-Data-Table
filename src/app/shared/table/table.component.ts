@@ -11,6 +11,8 @@ export class TableComponent implements OnInit {
   public searchText: string;
   order: string = 'name';
   reverse: boolean = false;
+  pageOfItems: Array<any>;
+  items = [];
 
   /**
    * Come data in table
@@ -48,7 +50,9 @@ export class TableComponent implements OnInit {
    * @param id Employee data
    */
   delete(id: number) {
-    this.api.empDelete(id);
+    if (confirm('Do you want to delete employee?')) {
+      this.api.empDelete(id);
+    }
   }
 
   /**
@@ -61,5 +65,10 @@ export class TableComponent implements OnInit {
       this.reverse = !this.reverse;
     }
     this.order = value;
+  }
+
+  onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
   }
 }
