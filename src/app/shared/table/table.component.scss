@@ -2,20 +2,39 @@
 .pointer{
     cursor: pointer;
 }
+table{
+  border: 1px;
+}
 thead th {
     cursor: pointer;
-    margin-right: 15px;
-    margin-left: 15px;
-  
+    width: 50%;
+    border:2px solid #456879; 
+    background: rgb(2, 87, 80);
     span {
       visibility: hidden;
     }
   
     &.active {
-      color: #000;
+      color: navy;
   
       span {
         visibility: visible;
       }
     }
+  }
+  .search {
+    border:2px solid #456879;
+    border-radius:5px;
+    height: 50%;
+    width: 30%;
+    padding: 1%;
+    margin-left: 55%;
+    
+  }
+  .add {
+    border:2px solid #456879;
+    border-radius:5px;
+    height: 20%;
+    width: 15%;
+    padding: 1%;
   }

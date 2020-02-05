@@ -87,8 +87,8 @@
 
             </li>
             <li>
-                <button type="submit" class="field-style" [disabled]="!empForm">Save</button>
-                <button class="field-style" type="button" (click)="onClear()">Clear</button>
+                <button type="submit" class="field-style" [disabled]="!empForm.valid">Save</button>
+                <button class="field-style" type="reset">Clear</button>
             </li>
         </ul>
     </form>

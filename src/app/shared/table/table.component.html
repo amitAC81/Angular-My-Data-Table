@@ -1,13 +1,13 @@
 <style [src]="./table.component.scss"></style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<button (click)="addEmp()">Add Employee</button>
-<input type="text" name="text" [(ngModel)]="searchText" placeholder="search..">
+<button (click)="addEmp()" class="fa fa-plus add">Add Employee</button>
+<input type="text" name="text" [(ngModel)]="searchText" placeholder="search.." class="search">
 <table class="table">
   <thead class="thead-dark">
     <tr>
     <tr>
       <th scope="col" [class.active]="order === 'name'" (click)="setOrder('name')">
-        Full-Name<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+        Full_Name<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
       </th>
       <th scope="col" [class.active]="order === 'email'" (click)="setOrder('email')">
         Email<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
@@ -25,7 +25,7 @@
         Depaerment<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
       </th>
       <th scope="col" [class.active]="order === 'hiredate'" (click)="setOrder('hiredate')">
-        Hire-date<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+        Hire_Date<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
       </th>
       <th scope="col" [class.active]="order === 'permanent'" (click)="setOrder('permanent')">
         Permanent<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
@@ -36,7 +36,7 @@
   </thead>
   <tbody>
     <tr
-      *ngFor="let emp of datas | async | sorting: order: reverse | filter: {name: searchText, email: searchText, mobile: searchText, address:searchText, gender:searchText, department:searchText, hiredate:searchText, permanent:searchText}; let i=index;">
+      *ngFor="let emp of datas | async | filter: {name: searchText, email: searchText, mobile: searchText, address:searchText, gender:searchText, department:searchText, hiredate:searchText, permanent:searchText} | sorting: order: reverse">
       <td>{{emp.name}}</td>
       <td>{{emp.email}}</td>
       <td>{{emp.mobile}}</td>
