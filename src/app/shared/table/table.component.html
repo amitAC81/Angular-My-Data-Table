@@ -1,8 +1,17 @@
 <style [src]="./table.component.scss"></style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    
 <button (click)="addEmp()" class="fa fa-plus add">Add Employee</button>
-<input type="text" name="text" [(ngModel)]="searchText" placeholder="search.." class="search">
-<table class="table">
+
+<div class="container" style="display: block; margin: 0px;  width: 0px; height: 20px; padding: 0px; float: left;">
+    <input type="text" name="text" [(ngModel)]="searchText" placeholder="Search...">
+    <div class="search"></div>
+  </div>
+  <div class="table-users">
+      <div class="header">employee Table</div>
+<table class="table div">
   <thead class="thead-dark">
     <tr>
     <tr>
@@ -54,4 +63,5 @@
     </tr>
   </tbody>
 </table>
+</div>
 <amt-pop-up></amt-pop-up>
