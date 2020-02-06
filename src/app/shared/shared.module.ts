@@ -7,7 +7,6 @@ import { AddEditModelComponent } from './add-edit-model/add-edit-model.component
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { CoreModule } from '../core/core.module';
 
-
 @NgModule({
   declarations: [TableComponent, AddEditModelComponent, PopUpComponent],
   imports: [

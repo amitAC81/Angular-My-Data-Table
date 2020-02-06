@@ -1,5 +1,6 @@
 @import "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
 
+
 .form-style-9{
 	max-width: 450px;
 	background: #FAFAFA;
@@ -61,7 +62,10 @@
 	font: 12px Arial, Helvetica, sans-serif;
 }
 .form-style-9 ul li input[type="button"]:hover, 
-.form-style-9 ul li input[type="submit"]:hover {
+button[type="submit"]:hover {
 	background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
 	background-color: #28739E;
+}
+button[type="submit"]:disabled{
+	cursor: not-allowed;
 }
