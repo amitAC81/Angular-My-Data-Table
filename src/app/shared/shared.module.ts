@@ -6,11 +6,9 @@ import { TableComponent } from './table/table.component';
 import { AddEditModelComponent } from './add-edit-model/add-edit-model.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { CoreModule } from '../core/core.module';
-import { JwPaginationComponent } from 'jw-angular-pagination';
-
 
 @NgModule({
-  declarations: [TableComponent, AddEditModelComponent, PopUpComponent, JwPaginationComponent],
+  declarations: [TableComponent, AddEditModelComponent, PopUpComponent],
   imports: [
     CommonModule,
     SharedRoutingModule,

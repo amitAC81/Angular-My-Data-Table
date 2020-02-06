@@ -66,9 +66,4 @@ export class TableComponent implements OnInit {
     }
     this.order = value;
   }
-
-  onChangePage(pageOfItems: Array<any>) {
-    // update current page of items
-    this.pageOfItems = pageOfItems;
-  }
 }

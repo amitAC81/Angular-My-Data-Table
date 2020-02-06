@@ -2,69 +2,66 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-    
+
 <button (click)="addEmp()" class="fa fa-plus add">Add Employee</button>
 
 <div class="container" style="display: block; margin: 0px;  width: 0px; height: 20px; padding: 0px; float: left;">
-    <input type="text" name="text" [(ngModel)]="searchText" placeholder="Search...">
-    <div class="search"></div>
-  </div>
-  <div class="table-users">
-      <div class="header">employee Table</div>
-<table class="table div">
-  <thead class="thead-dark">
-    <tr>
-    <tr>
-      <th scope="col" [class.active]="order === 'name'" (click)="setOrder('name')">
-        Full_Name<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
-      </th>
-      <th scope="col" [class.active]="order === 'email'" (click)="setOrder('email')">
-        Email<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
-      </th>
-      <th scope="col" [class.active]="order === 'mobile'" (click)="setOrder('mobile')">
-        Mobile<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
-      </th>
-      <th scope="col" [class.active]="order === 'address'" (click)="setOrder('address')">
-        Address<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
-      </th>
-      <th scope="col" [class.active]="order === 'gender'" (click)="setOrder('gender')">
-        Gender<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
-      </th>
-      <th scope="col" [class.active]="order === 'department'" (click)="setOrder('department')">
-        Depaerment<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
-      </th>
-      <th scope="col" [class.active]="order === 'hiredate'" (click)="setOrder('hiredate')">
-        Hire_Date<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
-      </th>
-      <th scope="col" [class.active]="order === 'permanent'" (click)="setOrder('permanent')">
-        Permanent<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
-      </th>
-      <th scope="col">Edit</th>
-      <th scope="col">Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      *ngFor="let emp of datas | async | filter: {name: searchText, email: searchText, mobile: searchText, address:searchText, gender:searchText, department:searchText, hiredate:searchText, permanent:searchText} | sorting: order: reverse">
-      <td>{{emp.name}}</td>
-      <td>{{emp.email}}</td>
-      <td>{{emp.mobile}}</td>
-      <td>
-        <span *ngFor="let add of emp.address">
-          {{add.city}},{{add.zip}}
-        </span>
-      </td>
-      <td>{{emp.gender}}</td>
-      <td>{{emp.department}}</td>
-      <td>{{emp.hiredate}}</td>
-      <td>{{emp.permanent}}</td>
-      <td><span (click)="edit(emp.id)" router class="fa fa-edit pointer"></span></td>
-      <td><span (click)="delete(emp.id)" class="fa fa-trash pointer"></span></td>
-    </tr>
-  </tbody>
-</table>
-<div id="c2" class="card-footer pt-1">
-    <jw-pagination [items]="datas" (changePage)="onChangePage($event)"></jw-pagination>
+  <input type="text" name="text" [(ngModel)]="searchText" placeholder="Search...">
+  <div class="search"></div>
 </div>
+<div class="table-users">
+  <div class="header">employee Table</div>
+  <table class="table div">
+    <thead class="thead-dark">
+      <tr>
+      <tr>
+        <th scope="col" [class.active]="order === 'name'" (click)="setOrder('name')">
+          Full_Name<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+        </th>
+        <th scope="col" [class.active]="order === 'email'" (click)="setOrder('email')">
+          Email<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+        </th>
+        <th scope="col" [class.active]="order === 'mobile'" (click)="setOrder('mobile')">
+          Mobile<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+        </th>
+        <th scope="col" [class.active]="order === 'address'" (click)="setOrder('address')">
+          Address<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+        </th>
+        <th scope="col" [class.active]="order === 'gender'" (click)="setOrder('gender')">
+          Gender<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+        </th>
+        <th scope="col" [class.active]="order === 'department'" (click)="setOrder('department')">
+          Depaerment<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+        </th>
+        <th scope="col" [class.active]="order === 'hiredate'" (click)="setOrder('hiredate')">
+          Hire_Date<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+        </th>
+        <th scope="col" [class.active]="order === 'permanent'" (click)="setOrder('permanent')">
+          Permanent<span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+        </th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let emp of datas | async | filter: {name: searchText, email: searchText, mobile: searchText, address:searchText, gender:searchText, department:searchText, hiredate:searchText, permanent:searchText} | sorting: order: reverse">
+        <td>{{emp.name}}</td>
+        <td>{{emp.email}}</td>
+        <td>{{emp.mobile}}</td>
+        <td>
+          <span *ngFor="let add of emp.address">
+            {{add.city}},{{add.zip}}
+          </span>
+        </td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.department}}</td>
+        <td>{{emp.hiredate}}</td>
+        <td>{{emp.permanent}}</td>
+        <td><span (click)="edit(emp.id)" router class="fa fa-edit pointer"></span></td>
+        <td><span (click)="delete(emp.id)" class="fa fa-trash pointer"></span></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <amt-pop-up></amt-pop-up>
